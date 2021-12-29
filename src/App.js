@@ -37,6 +37,12 @@ const App = () => {
         />
       </form>
       <section class="p-10 md:p-4 lg:p-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {isLoading && (
+          <h1 class='font-semibold ml-12 text-4xl'>Loading...</h1>
+        )}
+        {error && (
+          <h1>Oop!<br/>Unable to fetch the contact lists, try again</h1>
+        )}
         <ContactForm contactList={contactList}/>
       </section>
     </div>
